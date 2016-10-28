@@ -1,0 +1,14 @@
+<div class='row text-center'>
+    <div class='col-sm-4 col-sm-offset-4'>
+        <h1>To-do list</h1>
+
+        <button ui-sref="add-todo" class='btn btn-primary btn-lg' style='margin-bottom:20px;'>Add Todo</button>
+
+        <ul class="list-group">
+            <li ng-repeat='todo in todos' ng-class="{completed: todo.is_completed}" class="list-group-item">
+                <input type="checkbox" ng-checked="todo.is_completed" ng-change="toggleCompleted(todo)" ng-model='todo.is_completed'>  {{todo.name}}
+                <span class='badge' ng-click="deleteTodo(todo.id)">X</span>
+            </li>
+        </ul>
+    </div>
+</div>

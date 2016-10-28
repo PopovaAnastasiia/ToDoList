@@ -1,0 +1,33 @@
+.completed {
+    text-decoration: line-through;
+}
+
+.badge {
+    cursor: pointer;
+}
+
+.left{
+    margin: auto;
+    display: inline-block;
+    float: left;
+    width: 35%;
+    min-height: 99vh;
+    background-color: #0066ff;
+    position: relative;
+}
+
+.right{
+    text-align: center;
+    display: inline-block;
+    float: right;
+    width: 65%;
+    min-height: 99vh;
+    background-color: #e6e6e6;
+    position: relative;
+}
+
+.cont{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}

@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+<div class="left">
+    <div class="cont">
+        <h1>ToDo App</h1>
+    </div>
+</div>
+<div class="right">
+    <div class="cont">
+        <h2>Welcome to "Todo list" application</h2>
+        <h2>Powered by Django/AngularJS</h2>
+        <a href="{{ todo_url }}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-chevron-right"></span> Go to App</a>
+    </div>
+</div>
+</body>
+</html>
