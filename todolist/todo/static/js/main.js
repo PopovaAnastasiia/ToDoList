@@ -15,6 +15,12 @@ app.config(function($stateProvider, $urlRouterProvider){
             url: "/add",
             templateUrl: '/static/templates/add_todo.html',
             controller: 'MainCtrl'
+         })
+         .state('edit-todo', {
+            url: "/edit",
+            templateUrl: '/static/templates/edit_todo.html',
+            controller: 'EditCtrl',
+            params: { edited_todo: { value: { name: ""}}}
          });
 
     $urlRouterProvider.otherwise('/');
@@ -43,6 +49,20 @@ app.controller('MainCtrl', function($scope, Todos, $state){
     Todos.all().then(function(res){
         $scope.todos = res.data;
     });
+
+    $scope.goEdit = function(todo) {
+        $state.go('edit-todo', {edited_todo: todo})}
+    });
+
+app.controller('EditCtrl', function($scope, Todos, $state, $stateParams){
+    $scope.editedTodo = $stateParams.edited_todo
+
+    $scope.editTodo = function(todo) {
+        Todos.update(todo)
+            .then(function(res){
+                $state.go('home');
+            });
+    };
 });
 
 app.service('Todos', function($http, BASE_URL){

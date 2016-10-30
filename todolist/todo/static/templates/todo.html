@@ -8,6 +8,7 @@
             <li ng-repeat='todo in todos' ng-class="{completed: todo.is_completed}" class="list-group-item">
                 <input type="checkbox" ng-checked="todo.is_completed" ng-change="toggleCompleted(todo)" ng-model='todo.is_completed'>  {{todo.name}}
                 <span class='badge' ng-click="deleteTodo(todo.id)">X</span>
+                <span class='badge' ng-click="goEdit(todo)">Edit</span>
             </li>
         </ul>
     </div>

@@ -1,0 +1,11 @@
+<div class='row text-center'>
+    <div class='col-sm-4 col-sm-offset-4'>
+    <h1>Edit todo</h1>
+        <span ng-class="{completed: editedTodo.is_completed}">
+            <input type="checkbox" ng-checked="editedTodo.is_completed" ng-model='editedTodo.is_completed'>
+            {{ editedTodo.name }}
+        </span>
+        <input type="text" ng-model="editedTodo.name" value="editedTodo.name" class='form-control' />
+        <button class='btn btn-success btn-lg' ng-click="editTodo(editedTodo)">Save</button>
+    </div>
+</div>
